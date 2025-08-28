@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="styles2.css">
+<link rel="stylesheet" href="styles3.css">
+<link rel="stylesheet" href="styles4.css">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/javanese-text" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kapakana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
+
+
+
+<title>Aureva</title>
+
+
+</head>
+<body>
+
+
+  <div class="top-header">
+  <div class="top-header-content">
+<a href="index.html"><span class="brand-name">Aureva</span></a>
+
+    <div class="top-header-links">
+      <a href="store.html">Find a store</a>
+      <span class="divider">|</span>
+      <a href="help.html">Help</a>
+      <span class="divider">|</span>
+      <a href="signin.html">Sign in</a>
+    </div>
+  </div>
+</div>
+
+  
+  
+<header class="mobile-header">
+  <div class="mobile-top">
+    <a href="index.html" class="mobile-brand">Aureva</a>
+    <div class="mobile-icons">
+      <img src="profile-icon.svg" alt="Profile" class="icon">
+      <a href="cart.html">
+        <img src="bag-icon.svg" alt="Bag" class="icon">
+      </a>
+      <button id="menuBtn" class="menu-btn">☰</button>
+    </div>
+  </div>
+</header>
+
+
+<nav id="mobileSidebar" class="mobile-sidebar">
+  <ul>
+    <!-- Home -->
+    <li><a href="index.html">Home</a></li>
+
+    <!-- Featured -->
+    <li>
+      <a href="#" class="submenu-toggle">Featured <span class="arrow">></span></a>
+      <ul class="submenu">
+<li><a href="featured.html?cat=new arrival">New Arrivals</a></li>
+<li><a href="featured.html?cat=best seller">Best Sellers</a></li>
+<li><a href="featured.html?cat=limited edition">Limited Edition</a></li>
+<li><a href="featured.html?cat=sale">Sale / Clearance</a></li>
+      </ul>
+    </li>
+
+    <!-- Shoes -->
+    <li>
+      <a href="#" class="submenu-toggle">Shoes <span class="arrow">></span></a>
+      <ul class="submenu">
+<li><a href="shoes.html?cat=all">All Shoes</a></li>
+<li><a href="shoes.html?cat=sneakers">Sneakers</a></li>
+<li><a href="shoes.html?cat=heels-pumps">Heels & Pumps</a></li>
+<li><a href="shoes.html?cat=flats-sandals">Flats & Sandals</a></li>
+<li><a href="shoes.html?cat=boots">Boots</a></li>
+<li><a href="shoes.html?cat=sports-active">Sports & Active</a></li>
+      </ul>
+    </li>
+
+    <!-- Clothing -->
+    <li>
+      <a href="#" class="submenu-toggle">Clothing <span class="arrow">></span></a>
+      <ul class="submenu" id="mobileCategoryFilters">
+             <li> <a href="allclothing.html?cat=all">All Clothing</a></li>
+ <li> <a href="allclothing.html?cat=tops">Tops</a></li>
+ <li> <a href="allclothing.html?cat=dresses">Dresses</a></li>
+ <li> <a href="allclothing.html?cat=bottoms">Bottoms</a></li>
+  <li> <a href="allclothing.html?cat=outerwear">Outerwear & Jackets</a></li>
+  <li> <a href="allclothing.html?cat=loungewear">Loungewear</a></li>
+  <li><a href="allclothing.html?cat=sets">Sets & Co-ords</a></li>
+      </ul>
+    </li>
+
+    <!-- Accessories -->
+    <li>
+      <a href="#" class="submenu-toggle">Accessories <span class="arrow">></span></a>
+      <ul class="submenu">
+      <li><a href="accessoriess.html">All Accessories</a></li>
+      <li><a href="accessoriess.html?cat=bags-purses">Bags & Purses</a></li>
+      <li><a href="accessoriess.html?cat=jewelry">Jewelry</a></li>
+      <li><a href="accessoriess.html?cat=belts">Belts</a></li>
+      <li><a href="accessoriess.html?cat=hats-caps">Hats & Caps</a></li>
+      <li><a href="accessoriess.html?cat=scarves">Scarves</a></li>
+      <li><a href="accessoriess.html?cat=extras">Extras</a></li>
+      </ul>
+    </li>
+  </ul>
+
+
+
+  <!-- Sidebar Extra Content -->
+  <div class="sidebar-extra">
+    <h2 class="sidebar-title">Aureva</h2>
+    <p class="sidebar-text">
+      Become an Aureva member to unlock more fashion inspiration and style tips, helping you dress with confidence and elevate your look.
+    </p>
+    <button class="sidebar-btn">Sign In</button>
+
+    <ul class="sidebar-vertical">
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Find a Store</a></li>
+      <li><a href="#">Bag</a></li>
+    </ul>
+  </div>
+
+</nav>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileSidebar = document.getElementById('mobileSidebar');
+
+// Toggle main sidebar
+menuBtn.addEventListener('click', () => {
+  mobileSidebar.classList.toggle('open');
+});
+
+// Toggle submenus
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+submenuToggles.forEach(toggle => {
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    const submenu = this.nextElementSibling;
+    if (submenu) {
+      submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+  });
+});
+
+// ✅ Filter logic for accessories.html
+document.addEventListener('DOMContentLoaded', function () {
+  const filters = document.querySelectorAll('#categoryFilters li'); // desktop
+  const items = document.querySelectorAll('.products .product-item');
+  const header = document.querySelector('.filters h2');
+
+  // Mobile submenu items
+  const mobileSubmenuItems = document.querySelectorAll('.submenu li[data-cat]');
+  const mobileHeader = document.querySelector('#mobileSidebar h2');
+
+  // Mapping for label names
+  const labelMap = {
+    'all': 'All Accessories',
+    'bags-purses': 'Bags & Purses',
+    'jewelry': 'Jewelry',
+    'belts': 'Belts',
+    'hats-caps': 'Hats & Caps',
+    'scarves': 'Scarves',
+    'extras': 'Extras'
+  };
+
+  function applyFilter(cat, source = 'desktop') {
+    items.forEach(item => {
+      const match = (cat === 'all') || (item.dataset.category === cat);
+      item.style.display = match ? '' : 'none';
+    });
+
+    const label = labelMap[cat] || cat;
+
+    if (source === 'desktop') {
+      header.textContent = label;
+    } else if (mobileHeader) {
+      mobileHeader.textContent = label;
+    }
+  }
+
+  // Desktop clicks
+  filters.forEach(li => {
+    li.style.cursor = 'pointer';
+    li.addEventListener('click', () => {
+      filters.forEach(el => el.classList.remove('active'));
+      li.classList.add('active');
+      applyFilter(li.dataset.cat, 'desktop');
+    });
+  });
+
+  // Mobile submenu clicks
+  mobileSubmenuItems.forEach(li => {
+    li.style.cursor = 'pointer';
+    const link = li.querySelector('a');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // prevents reload
+        mobileSubmenuItems.forEach(el => el.classList.remove('active'));
+        li.classList.add('active');
+
+        applyFilter(li.dataset.cat, 'mobile');
+
+        if (mobileSidebar) mobileSidebar.classList.remove('open'); // close sidebar
+      });
+    }
+  });
+
+  // Apply filter from URL query (e.g., accessories.html?cat=bags-purses)
+  const params = new URLSearchParams(window.location.search);
+  const categoryFromUrl = params.get('cat');
+  if (categoryFromUrl) {
+    const liDesktop = Array.from(filters).find(el => el.dataset.cat === categoryFromUrl);
+    const liMobile = Array.from(mobileSubmenuItems).find(el => el.dataset.cat === categoryFromUrl);
+
+    if (liDesktop) {
+      filters.forEach(el => el.classList.remove('active'));
+      liDesktop.classList.add('active');
+    }
+    if (liMobile) {
+      mobileSubmenuItems.forEach(el => el.classList.remove('active'));
+      liMobile.classList.add('active');
+    }
+
+    applyFilter(categoryFromUrl, 'desktop');
+  } else {
+    // Default: show all accessories
+    applyFilter('all', 'desktop');
+  }
+});
+</script>
+
+
+<section class="checkout-container">
+  <!-- LEFT SIDE -->
+  <div class="checkout-left">
+ 
+    <!-- Delivery -->
+    <h2>Delivery</h2>
+    <p>How would you like to order?</p>
+    <div class="option-box delivery-option" data-type="delivery">Deliver It</div>
+    <div class="option-box delivery-option" data-type="pickup">Pick Up</div>
+
+    <!-- Contact Info -->
+    <h2>Contact Information</h2>
+    <input type="email" class="input-box" placeholder="Email" required>
+    <input type="text" class="input-box" placeholder="First Name" required>
+    <input type="text" class="input-box" placeholder="Last Name" required>
+    <input type="text" class="input-box" placeholder="Address" required>
+    <input type="tel" class="input-box" placeholder="Phone Number" required>
+
+    <!-- Shipping -->
+    <h2>Shipping</h2>
+    <div class="hey" data-method="free">
+      <strong>Free Shipping</strong><br>
+      Arrives Sat, Sep 6 <br>
+      <small>This is an international shipment requiring customs clearance</small>
+    </div>
+    <div class="hey" data-method="express">
+      <strong>Express Shipping</strong><br>
+      Arrives Fri, Sep 5 <br>
+      <small>Extra charges may apply for faster delivery</small>
+    </div>
+
+    <!-- Payment -->
+    <h2>Payment</h2>
+    <p>How would you like to pay?</p>
+
+    <div class="option-box payment-option" data-method="card">
+      Credit / Debit Card
+      <div class="payment-details hidden">
+        <input type="text" class="input-box" placeholder="Card Number" required>
+        <input type="text" class="input-box" placeholder="Name on Card" required>
+        <input type="text" class="input-box" placeholder="MM/YY" required>
+        <input type="text" class="input-box" placeholder="CVC" required>
+      </div>
+    </div>
+
+    <div class="option-box payment-option" data-method="paypal">
+      PayPal
+    </div>
+
+    <div class="option-box payment-option" data-method="gcash">
+      GCash
+    </div>
+
+    <div class="place-order-wrapper">
+  <button id="placeOrderBtn" class="place-order-btn">Place Order</button>
+</div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="checkout-right">
+    <h2>Order Summary</h2>
+    <p>Subtotal: <span id="checkoutSubtotal">₱0</span></p>
+    <p>Delivery/Shipping: <span id="checkoutShipping">₱0</span></p>
+    <hr>
+    <p><strong>Total: <span id="checkoutTotal">₱0</span></strong></p>
+
+    <div id="checkoutItems"></div>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Helpers
+  const getCart = () => JSON.parse(localStorage.getItem("cart") || "[]");
+  const parsePesoToNumber = (t) => parseFloat(String(t).replace(/[^0-9.]/g, "")) || 0;
+  const formatPeso = (n) => `₱${(n || 0).toLocaleString()}`;
+
+  // Elements
+  const itemsContainer = document.getElementById("checkoutItems");
+  const subtotalEl = document.getElementById("checkoutSubtotal");
+  const shippingEl = document.getElementById("checkoutShipping");
+  const totalEl = document.getElementById("checkoutTotal");
+  const deliveryDateEl = document.getElementById("deliveryDate");
+
+  let selectedDelivery = null;
+  let selectedShipping = null;
+  let selectedPayment = null;
+
+  // Render order summary
+  function renderSummary() {
+    const cart = getCart();
+    let subtotal = 0;
+
+    itemsContainer.innerHTML = "";
+    cart.forEach(item => {
+      const priceNum = parsePesoToNumber(item.price);
+      subtotal += priceNum * (item.quantity || 1);
+
+      const div = document.createElement("div");
+      div.classList.add("order-item");
+      div.innerHTML = `
+        <img src="${item.img}" width="80" style="border-radius:8px;">
+        <div>
+          <p><strong>${item.brand}</strong></p>
+          <p>${item.name}</p>
+          <p>${item.price} × ${item.quantity}</p>
+        </div>
+      `;
+      itemsContainer.appendChild(div);
+    });
+
+    const shipping = 200;
+    subtotalEl.textContent = formatPeso(subtotal);
+    shippingEl.textContent = formatPeso(shipping);
+    totalEl.textContent = formatPeso(subtotal + shipping);
+  }
+
+  // ✅ Delivery toggle
+  document.querySelectorAll(".delivery-option").forEach(opt => {
+    opt.addEventListener("click", () => {
+      document.querySelectorAll(".delivery-option").forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+
+      selectedDelivery = opt.dataset.type;
+      localStorage.setItem("deliveryMethod", selectedDelivery);
+    });
+  });
+
+  // ✅ Shipping toggle
+  document.querySelectorAll(".hey").forEach(opt => {
+    opt.addEventListener("click", () => {
+      document.querySelectorAll(".hey").forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+
+      selectedShipping = opt.dataset.method;
+      localStorage.setItem("shippingMethod", selectedShipping);
+    });
+  });
+
+  // 🚚 Shipping date = today + 10 days
+  function setDeliveryDate() {
+    const today = new Date();
+    today.setDate(today.getDate() + 10);
+    if (deliveryDateEl) {
+      deliveryDateEl.textContent = today.toDateString();
+    }
+  }
+
+  // 💳 Payment toggle
+  document.querySelectorAll(".payment-option").forEach(opt => {
+    opt.addEventListener("click", () => {
+      document.querySelectorAll(".payment-option").forEach(o => o.classList.remove("active"));
+      opt.classList.add("active");
+
+      document.querySelectorAll(".payment-details").forEach(d => d.classList.add("hidden"));
+      const details = opt.querySelector(".payment-details");
+      if (details) details.classList.remove("hidden");
+
+      selectedPayment = opt.dataset.method;
+      localStorage.setItem("paymentMethod", selectedPayment);
+    });
+  });
+
+  renderSummary();
+  setDeliveryDate();
+});
+</script>
+
+
+<footer class="site-footer">
+  © 2025 Aureva, Inc. All rights reserved
+</footer>
+
+
+
+
+
+</body>
+</html>
